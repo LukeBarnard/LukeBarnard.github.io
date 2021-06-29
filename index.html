@@ -23,6 +23,15 @@ a { color: #1DACE8;
     height:25px;
 }
 
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  padding: 10px;
+}
+
 .menu {
     background-color: #333;
   	color: white;
@@ -150,8 +159,20 @@ function includeHTML() {
 <body>
 
 <div class="header" style="padding-left:16px">
-  <h1>Luke Barnard</h1>
-  <h2>Space Weather Scientist</h2>
+
+  <div class="row">
+      <div class="column">
+          <h1>Luke Barnard</h1>
+          <h2>Space Weather Scientist</h2>
+      </div>
+      <div class="column">
+          <img src="avatar.png" alt="Headshot of Luke Barnard" width="128" height="128", align="right">
+      </div>
+    
+  </div> 
+  
+  
+  
 </div>
 
 
@@ -177,7 +198,9 @@ function includeHTML() {
     <ul>
       	<li>What are the limits to the predictability of space weather, and what factors influence this?</li><br>
       	
-    	<li>How does the long-term variability of the Sun affect the near-Earth space environment?</li><br>
+    	<li>How can we best use heliospheric remote sensing data to improve space weather forecasting?</li><br>
+        
+        <li>How does the long-term variability of the Sun affect the near-Earth space environment?</li><br>
     	
     	<li>How can we improve estimates of past space climate from proxy observations, such as sunspot drawings, geomagnetic activity records, and cosmogenic isotope records?</li> 
     </ul>
