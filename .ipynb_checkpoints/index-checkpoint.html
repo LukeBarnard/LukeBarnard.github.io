@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4 {
+ color:#1C366B;
+}
+
+a { color: #1DACE8;
+}
+
+
+.fa {
+    font-size:22px;
+    height:25px;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  padding: 10px;
+}
+
+.menu {
+    background-color: #333;
+  	color: white;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.topnav a:hover {
+  background-color: #f2f2f2;
+  color: black;
+}
+
+.topnav-right {
+  float: right;
+}
+
+.active {
+  background-color: #F24D29;
+  color: white;
+}
+
+ /*ensures the three bars don't show until in responsive mode:*/
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a {display: none;}
+  .topnav-right {
+  	position: relative;
+    float: right;
+   }
+   .fa {
+    height:20px;
+   }
+  .topnav-right a {display: inline;}
+  .topnav a.icon {
+    float: left;
+    display: block;
+    font-size:22px;
+    height: 25px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: sticky;
+    right: 0;
+    top: 0;
+    font-size:17px;
+    height: 25px;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+    .topnav-right.responsive {
+  	postition: relative;
+    float: right;
+    }
+    .fa {
+    height:25px;
+   }
+    .topnav-right.responsive a {display:inline;
+    }
+    .topnav a.icon {
+    float: left;
+    display: block;
+    font-size:17px;
+    height: 25px;
+  }
+  }
+}
+</style>
+
+<script>
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+}
+</script> 
+
+</head>
+<body>
+
+<div class="header" style="padding-left:16px">
+
+  <div class="row">
+      <div class="column">
+          <h1>Luke Barnard</h1>
+          <h2>Space Weather Scientist</h2>
+      </div>
+      <div class="column">
+          <img src="avatar.png" alt="Headshot of Luke Barnard" width="128" height="128", align="right">
+      </div>
+    
+  </div> 
+  
+  
+  
+</div>
+
+
+<div class="topnav" id="myTopnav">
+  <a href="#about" class="menu">About</a>
+  <a href="#cv" class="menu">CV</a>
+  <a href="#publications" class="menu">Publications</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars"></i></a>
+
+<div class="topnav-right">
+    <a href="mailto:luke.a.barnard%40googlemail.com" class="fa fa-envelope" title="Email"><span class="label"></span></a>
+        
+	<a href="https://twitter.com/L_A_Barnard" class="fa fa-twitter" target="_blank" title="Twitter"><span class="label"></span></a>
+    <a href="https://github.com/LukeBarnard" class="fa fa-github" target="_blank" title="GitHub"><span class="label"></span></a>
+    <a href="https://uk.linkedin.com/in/luke-barnard-076a9913" class="fa fa-linkedin" target="_blank" title="LinkedIn"><span class="label"></span></a>
+	
+  </div>
+</div>
+
+<div id="about" style="padding-left:16px">
+    <br><br><br>
+    <p>I am a postdoctoral researcher at the University of Reading, and my research focuses on how the Sun creates and controls the space environment near Earth. Some of the research questions I am working on include:</p>
+    <ul>
+      	<li>What are the limits to the predictability of space weather, and what factors influence this?</li><br>
+      	
+    	<li>How can we best use heliospheric remote sensing data to improve space weather forecasting?</li><br>
+        
+        <li>How does the long-term variability of the Sun affect the near-Earth space environment?</li><br>
+    	
+    	<li>How can we improve estimates of past space climate from proxy observations, such as sunspot drawings, geomagnetic activity records, and cosmogenic isotope records?</li> 
+    </ul>
+ 
+</div>
+  
+<div id="cv" style="padding-left:16px">
+    <br><br><br>    
+    <div w3-include-html="cv.html"></div>  
+</div>
+  
+<div id="publications" style="padding-left:16px">
+    <br><br><br>
+    <p>Below is a list of publications which I have authored or co-authored. My publication record is also available from <a href="http://orcid.org/0000-0001-9876-4612" target="_blank">ORCID</a>, <a href="http://www.researcherid.com/rid/L-2930-2015" target="_blank">ResearcherID</a>, and <a href="https://scholar.google.co.uk/citations?user=xjht6VcAAAAJ&hl=en" target="_blank">Google Scholar</a>. All of my publications should be available open access via the links below, but please mail me if you have difficulty getting a copy of anything.</p><br>
+     <div w3-include-html="publications.html"></div>  
+</div>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+
+<script>
+// Add active class to the current button (highlight it)
+var header = document.getElementById("myTopnav");
+var btns = header.getElementsByClassName("menu");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    if (current.length > 0) { 
+      current[0].className = current[0].className.replace(" active", "");
+    }
+    this.className += " active";
+  });
+}
+</script>
+
+<script>
+includeHTML();
+</script> 
+
+</body>
+</html>
