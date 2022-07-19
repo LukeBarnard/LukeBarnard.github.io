@@ -137,7 +137,7 @@ def make_cv_publications_list():
 
             doi_url = "https://doi.org/" + bib_data.entries[e].fields["doi"]
             doi_str = Text(" DOI:", HRef(doi_url, bib_data.entries[e].fields["doi"]))
-            count_str = Text("{:02d}. ".format(total_count - article_count))
+            count_str = Text("{:02d}. ".format(article_count))
 
             f.write(Tag('b', count_str, title_str).render_as("html")+ "<br>\n")
             f.write(Text(name_str, yr_str, jrnl_str, doi_str).render_as("html"))
