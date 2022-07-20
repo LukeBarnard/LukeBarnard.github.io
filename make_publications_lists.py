@@ -62,10 +62,10 @@ def make_website_publications_list():
             doi_str = Text(" DOI:", HRef(doi_url, bib_data.entries[e].fields["doi"]))
 
 
-            f.write(tab+"<li>\n")
-            f.write(tab+tab+ Tag('b', title_str).render_as("html")+ "<br>\n")
-            f.write(tab+tab+Text(name_str, yr_str, jrnl_str, doi_str).render_as("html"))            
-            f.write(tab+ "</li><br>\n")
+            f.write(tab + "<li>\n")
+            f.write(tab + tab + Tag('b', title_str).render_as("html")+ "<br>\n")
+            f.write(tab + tab + Text(name_str, yr_str, jrnl_str, doi_str).render_as("html"))            
+            f.write(tab + "</li><br>\n")
         f.write("</ol>")
     return
 
@@ -95,8 +95,10 @@ def make_cv_publications_list():
             total_count += 1
 
     article_count = 0
+    tab = "    "
 
     with open("cv_publications.html", "w", encoding="utf-8") as f:
+        f.write("<ol>\n")
 
         for i, e in enumerate(sorted_keys):
 
@@ -137,12 +139,16 @@ def make_cv_publications_list():
 
             doi_url = "https://doi.org/" + bib_data.entries[e].fields["doi"]
             doi_str = Text(" DOI:", HRef(doi_url, bib_data.entries[e].fields["doi"]))
-            count_str = Text("{:02d}. ".format(article_count))
-
-            f.write(Tag('b', count_str, title_str).render_as("html")+ "<br>\n")
-            f.write(Text(name_str, yr_str, jrnl_str, doi_str).render_as("html"))
-            f.write('<br><br>')
-        return
+            #count_str = Text("{:02d}. ".format(article_count))
+            
+            f.write("<li>\n")
+            f.write(Tag('b', title_str).render_as("html")+ "<br>\n")
+            f.write(Text(name_str, yr_str, jrnl_str, doi_str).render_as("html")+ "\n")
+            f.write("</li>\n")
+            
+        f.write("</ol>")
+        
+    return
 
 if __name__ == "__main__":
     make_website_publications_list()
